@@ -20,3 +20,13 @@ module CodespacesTryRails
     # config.eager_load_paths << Rails.root.join("extras")
   end
 end
+
+module SampleApp
+  class Application < Rails::Application
+    # other lines...
+    config.log_level = :info
+    config.logger = ActFluentLoggerRails::Logger.new
+    config.lograge.enabled = true
+    config.lograge.formatter = Lograge::Formatters::Json.new
+  end
+end
