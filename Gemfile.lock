@@ -1,6 +1,10 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    act-fluent-logger-rails (0.6.4)
+      activesupport (>= 4)
+      fluent-logger
+      railties (>= 4)
     actioncable (7.0.4.1)
       actionpack (= 7.0.4.1)
       activesupport (= 7.0.4.1)
@@ -107,6 +111,8 @@ GEM
       smart_properties
     erubi (1.12.0)
     ffi (1.15.5)
+    fluent-logger (0.9.0)
+      msgpack (>= 1.0.0, < 2)
     globalid (1.0.1)
       activesupport (>= 5.0)
     hotwire-livereload (1.2.3)
@@ -132,6 +138,11 @@ GEM
     listen (3.8.0)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
+    lograge (0.12.0)
+      actionpack (>= 4)
+      activesupport (>= 4)
+      railties (>= 4)
+      request_store (~> 1.0)
     loofah (2.19.1)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -202,6 +213,8 @@ GEM
     regexp_parser (2.6.1)
     reline (0.3.2)
       io-console (~> 0.5)
+    request_store (1.5.1)
+      rack (>= 1.4)
     reverse_markdown (2.1.1)
       nokogiri
     rexml (3.2.5)
@@ -278,13 +291,16 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  act-fluent-logger-rails
   bootsnap
   capybara
   debug
   erb_lint
+  fluent-logger
   hotwire-livereload (~> 1.2)
   importmap-rails
   jbuilder
+  lograge
   puma (~> 5.0)
   rails (~> 7.0)
   selenium-webdriver
